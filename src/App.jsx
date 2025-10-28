@@ -3,6 +3,7 @@ import Nav from './components/Nav.jsx';
 import Home from './pages/Home';
 import Games from './pages/Game';
 import Art from './pages/Art';
+import Contact from './pages/Contact';
 
 /*        
 <Route path="/contact" element={<Contact />} />
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/games" element={<Games />} />
         <Route path="/art" element={<Art />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </>
   );
