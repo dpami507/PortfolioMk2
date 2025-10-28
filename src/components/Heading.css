@@ -1,0 +1,24 @@
+.heading {
+  width: 100%;
+  height: var(--bannerWidth);
+
+  display: flex;
+
+  background-color: var(--backgroundSecondary);
+  border-bottom: 10px solid;
+  border-image-slice: 1;
+  border-width: .15vw;
+
+  animation-name: gradientLine;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.heading h1 {
+  font-weight: 100;
+  color: white;
+  font-size: 4rem;
+}

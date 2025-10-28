@@ -1,0 +1,42 @@
+:root {
+    --background: rgb(14, 19, 14);
+    --backgroundSecondary: rgb(8, 10, 8);
+    --accent1: #2da022;
+    --accent2: #ffe96c;
+    --accentMid: #6e9e16;
+    --bannerWidth: 30vh;
+
+    padding: 0;
+    margin: 0;
+}
+
+body 
+{
+  padding: 0;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes gradientLine {
+    0% {border-image-source: linear-gradient(to right, var(--accent1), var(--accentMid), var(--accent2));}
+    33% {border-image-source: linear-gradient(to right, var(--accent2), var(--accent1), var(--accentMid));}
+    66% {border-image-source: linear-gradient(to right, var(--accentMid), var(--accent2), var(--accent1));}
+    100% {border-image-source: linear-gradient(to right, var(--accent1), var(--accentMid), var(--accent2));}
+}
+
+.line {
+    background-color: rgba(255, 255, 255, 0.25);
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 1px;
+
+    margin-top: 2.5vw;
+    margin-bottom: 2.5vw;
+}

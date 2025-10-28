@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  background: var(--background);
+}
+
+.landing
+{
+  background: var(--backgroundSecondary);
+  width: 100%;
+  height: 100vh;
+
+  display: grid;  
+  grid-template-columns: 50% 50%;
+  align-items: center;
+
+  border-bottom: 10px solid;
+  border-image-slice: 1;
+  border-width: .15vw;
+
+  animation-name: gradientLine;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+
+  overflow: hidden;
+}
+
+.landing h1
+{
+  place-self: center;
+
+  color: white;
+  font-size: 3vw;
+  font-weight: 100;
+
+  z-index: 1;
+}
+
+.landing img
+{
+  place-self: center;
+
+  margin: 0;
+
+  width: auto;
+  height: 100vh;
+}
+
+.about
+{
+  width: 100%;
+  height: 50svh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+
+  color: white;
+
+  text-align: center;
+}
+
+.about h2
+{
+  font-weight: 500;
+  font-size: 2.5vw;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.about p
+{
+  font-weight: 100;
+  font-size: 1.25vw;
+
+  width: 60vw;
+}
+
+.recentwork {
+  width: 100%;
+  height: 50svh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+
+  color: white;
+
+  text-align: center;
+}
+
+.recentwork h2
+{
+  font-weight: 500;
+  font-size: 2.5vw;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.boxlink-container {
+  display: flex;
+  gap: 20px;
+}

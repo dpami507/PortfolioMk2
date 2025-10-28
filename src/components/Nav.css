@@ -1,0 +1,34 @@
+#navbar {
+    padding: 0px;
+    margin: 0px;
+    
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+
+    background: linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+#navbar > ul > li {
+    padding: 0px;
+    margin: 0px;
+    display: inline-flex;
+    float: left;
+}
+
+.navitem {
+    padding: 20px;
+    margin: 0px;
+    border-bottom: rgba(0, 0, 0, 0) 1px solid;
+    text-decoration: none;
+    color: white;
+}
+
+.navitem:hover {
+    border-bottom: white 1px dashed;
+    transition: .2s;
+}
+
+.navitem.active {
+  border-bottom: white 1px solid;
+}

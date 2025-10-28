@@ -1,0 +1,12 @@
+.workcomp-container
+{
+  margin: 2.5vw 0px;
+
+  justify-self: center;
+  display: grid;
+
+  width: 80%;
+  grid-template-columns: auto auto;
+
+  gap: 25px;
+}
