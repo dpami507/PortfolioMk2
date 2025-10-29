@@ -8,7 +8,7 @@ function WorkComponent({img, link, title, description}) {
           <div>
             <h3>{title}</h3>
             <p>{description}</p>
-            <a href={link}>Click To See</a>
+            <a href={link} target="_blank">Click To See</a>
           </div>
 
           <img src={img} alt="" />

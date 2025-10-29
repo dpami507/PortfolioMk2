@@ -10,7 +10,7 @@
 
   position: relative;
 
-  border: 2px rgba(0, 0, 0, 0.5) solid;
+  border: 2px rgba(0, 0, 0, .5) ridge;
   border-radius: 10px;
 
   background-color: rgba(0, 0, 0, 0.25);
@@ -24,7 +24,7 @@
 
   margin: auto 1.5vh;
 
-  border: 2px black solid;
+  border: 2px black ridge;
   border-radius: 2.5%;
   
   overflow: hidden;

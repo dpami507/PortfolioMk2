@@ -6,49 +6,75 @@
   display: grid;
 
   width: 50vw;
+  min-width: 300px;
   height: 50vh;
-  grid-template-columns: 23vw 4vw 23vw;
+  grid-template-columns: 1fr auto minmax(0, auto);
   grid-template-rows: 100%;
-  gap: 25px;
+  gap: 0; /* Remove gap, use margins instead */
 
-  background-color: green;
+  border: 2px rgba(0, 0, 0, .5) ridge;
+  border-radius: 10px;
+
+  background-color: rgba(0, 0, 0, 0.25);
 }
 
 .info
 {
+    margin: 3%;
     color: white;
     display: grid;
     grid-template-rows: max-content max-content max-content max-content max-content;
+    min-width: 0;
 }
 
 .info p {
-    font-size: 1.25rem;
+    font-size: 1vw;
     margin-bottom: 4vh;
 }
 
 .info h3 {
-    font-size: 1.5rem;
+    font-size: 1.25vw;
 }
 
 .info a {
+    color: var(--accent2);
     margin-bottom: 5%;
+    font-weight: bold;
+    text-decoration: underline;
+    word-break: break-word;
 }
 
 .resume {
     align-self: center;
+    justify-self: center;
+    min-width: 0;
+    margin: 3%; /* Match the .info margin */
 }
 
 .resume img {
     border-radius: 1vw;
-    width: 16vw;
+    width: 100%;
+    max-width: 16vw;
+    min-width: 100px;
     aspect-ratio: 8/11;
+    transition: .2s;
+    display: block;
+}
+
+.resume img:hover {
+    scale: 1.05;
 }
 
 .border_line {
     width: 1px;
     height: 20vw;
-    margin-left: 3vw;
-    margin-right: 3vw;
+    margin-left: 1vw; /* Reduced from 3vw */
+    margin-right: 1vw; /* Reduced from 3vw */
     background-color: rgba(255, 255, 255, 0.5);
     align-self: center;
+}
+
+.info a:hover
+{
+  color: color-mix(in oklab, var(--accent2) 50%, #000000 50%);
 }

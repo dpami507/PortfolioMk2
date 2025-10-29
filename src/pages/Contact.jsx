@@ -7,12 +7,12 @@ function Contact() {
         <Heading title={"Contact"}/>
         <div className='contact'>
             <div className='info'>
-                <p>You can reach me by email or by sending me a message on LinkedIn</p>
+                <p>You can reach me by email or by sending me a message on LinkedIn, There are also other contact methods on my Resume.</p>
                 <h3>Email:</h3>
-                <a href="">david.amidon@mymail.champlain.edu</a>
+                <a href="mailto:david.amidon@mymail.champlain.edu">david.amidon@mymail.champlain.edu</a>
 
                 <h3>LinkedIn</h3>
-                <a href="">Click to View</a>
+                <a href="https://www.linkedin.com/in/dpamidon/" target="_blank">Click to View</a>
             </div>
 
             <div className="border_line"></div>
