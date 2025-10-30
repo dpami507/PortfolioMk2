@@ -1,7 +1,7 @@
 import './Home.css'
 import { workList } from '../work.js';
 
-import BoxLink from '../Components/BoxLink.jsx'
+import BoxLink from '../components/BoxLink.jsx'
 
 function Home() {
 
