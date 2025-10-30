@@ -1,7 +1,7 @@
 import './Home.css'
 import { workList } from '../work.js';
 
-import Heading from '../Components/Heading.jsx'
+import Heading from '../components/Heading.jsx'
 import WorkComponent from '../components/WorkComponent.jsx';
 
 function Art() {

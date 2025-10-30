@@ -1,5 +1,5 @@
 import './Contact.css'
-import Heading from '../Components/Heading.jsx'
+import Heading from '../components/Heading.jsx'
 
 function Contact() {
     return (
