@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { getImagePath } from '../utils/helpers'
 import './BoxLink.css'
 
 function BoxLink({img, link, title, description}) {
@@ -9,7 +10,7 @@ function BoxLink({img, link, title, description}) {
             <h3>{title}</h3>
             <p>{description}</p>
           </div>
-          <img src={img} alt="" />
+          <img src={getImagePath(img)} alt="" />
         </Link>
     </>
   )

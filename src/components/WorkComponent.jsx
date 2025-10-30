@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { getImagePath } from '../utils/helpers'
 import './WorkComponent.css'
 
 function WorkComponent({img, link, title, description}) {
@@ -11,7 +12,7 @@ function WorkComponent({img, link, title, description}) {
             <a href={link} target="_blank">Click To See</a>
           </div>
 
-          <img src={img} alt="" />
+          <img src={getImagePath(img)} alt="" />
         </div>
     </>
   )

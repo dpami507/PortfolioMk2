@@ -1,6 +1,6 @@
 import './Home.css'
 import { workList } from '../work.js';
-
+import { getImagePath } from '../utils/helpers'
 import BoxLink from '../components/BoxLink.jsx'
 
 function Home() {
@@ -20,9 +20,10 @@ function Home() {
 
   return (
     <>  
+    
         <div className='landing'>
             <h1>David Amidon</h1>
-            <img src='/imgs/DavidAmidon.jpg' alt="" />
+            <img src= {getImagePath('/imgs/DavidAmidon.jpg')} alt="" />
         </div>
 
         <div className='about'>
