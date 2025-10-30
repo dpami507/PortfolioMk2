@@ -1,4 +1,3 @@
-import headShot from '/imgs/DavidAmidon.jpg'
 import './Home.css'
 import { workList } from '../work.js';
 
@@ -23,7 +22,7 @@ function Home() {
     <>  
         <div className='landing'>
             <h1>David Amidon</h1>
-            <img src={headShot} alt="" />
+            <img src='/imgs/DavidAmidon.jpg' alt="" />
         </div>
 
         <div className='about'>
