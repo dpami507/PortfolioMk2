@@ -62,7 +62,7 @@
     height: min-content;
 
     color: white;
-    font-size: 1.5vw;
+    font-size: 1.5rem;
     font-weight: 500;
 
     text-align: left;
@@ -75,7 +75,7 @@
     height: 100%;
 
     color: white;
-    font-size: 0.7vw;
+    font-size: .8rem;
     font-weight: 100;
 
     text-align: left;

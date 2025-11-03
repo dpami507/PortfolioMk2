@@ -7,7 +7,7 @@
   background-color: var(--backgroundSecondary);
   border-bottom: 10px solid;
   border-image-slice: 1;
-  border-width: .15vw;
+  border-width: .25vh;
 
   animation-name: gradientLine;
   animation-iteration-count: infinite;

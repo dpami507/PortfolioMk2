@@ -46,7 +46,7 @@
 .work-container h3
 {
   color: white;
-  font-size: 3.5vh;
+  font-size: 2rem;
   margin-bottom: 1vh;
 
   width: 90%;
@@ -56,13 +56,13 @@
 {
   width: 90%;
   color: white;
-  font-size: 2vh;
+  font-size: 1rem;
 }
 
 .work-container a
 {
   color: var(--accent2);
-  font-size: 2vh;
+  font-size: 1rem;
   font-weight: bold;
   text-decoration: underline;
 
@@ -77,4 +77,56 @@
 .work-container a:hover
 {
   color: color-mix(in oklab, var(--accent2) 50%, #000000 50%);
+}
+
+@media (max-width: 1600px) {
+  .work-container
+  {
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+
+    height: auto;
+  }
+
+  .work-container img
+  {
+    width: 40vw;
+    height: auto;
+    aspect-ratio: 1/1;
+
+    margin: 1.5vh auto;
+  }
+
+  .work-container div
+  {
+    margin: 2vh auto;
+    justify-self: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .work-container h3
+  {
+    width: 100%;
+    font-size: 4vh;
+    margin: 0;
+  }
+  .work-container p
+  {
+    width: 90%;
+    font-size: 2vh;
+    justify-self: center;
+    text-align: left;
+  }
+
+  .work-container div a
+  {
+    margin: 1vh auto 0vh auto;
+  }
+
+  .work-container a
+  {
+    font-size: 2rem;
+  }
+
 }

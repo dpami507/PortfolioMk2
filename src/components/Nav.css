@@ -1,12 +1,16 @@
 #navbar {
     padding: 0px;
     margin: 0px;
-    
     position: fixed;
     width: 100%;
     z-index: 10;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+}
 
-    background: linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+#navbar > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 #navbar > ul > li {
@@ -16,19 +20,126 @@
     float: left;
 }
 
+.contact-item {
+    float: right !important;
+}
+
 .navitem {
     padding: 20px;
     margin: 0px;
     border-bottom: rgba(0, 0, 0, 0) 1px solid;
     text-decoration: none;
     color: white;
+    transition: border-bottom 0.2s;
 }
 
 .navitem:hover {
     border-bottom: white 1px dashed;
-    transition: .2s;
 }
 
 .navitem.active {
-  border-bottom: white 1px solid;
+    border-bottom: white 1px solid;
+}
+
+/* Hamburger menu button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 20px;
+    background: none;
+    border: none;
+    z-index: 11;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    #navbar {
+        background: rgba(0, 0, 0, 0.95);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Hamburger animation when open */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-6px, 7px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-6px, -7px);
+    }
+
+    #navbar > ul {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.98);
+        flex-direction: column;
+        padding-top: 80px;
+        transition: left 0.3s ease-in-out;
+    }
+
+    #navbar > ul.active {
+        left: 0;
+    }
+
+    #navbar > ul > li {
+        display: block;
+        float: none !important;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .contact-item {
+        float: none !important;
+    }
+
+    .navitem {
+        display: block;
+        width: 100%;
+        padding: 25px 30px;
+        border-bottom: none;
+        font-size: 1.3rem;
+        font-weight: 300;
+    }
+
+    .navitem:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-bottom: none;
+    }
+
+    .navitem.active {
+        background: rgba(255, 255, 255, 0.15);
+        border-bottom: none;
+        border-right: 4px solid var(--accent2);
+    }
+}
+
+@media (max-width: 480px) {
+    #navbar > ul {
+        width: 65%;
+    }
+
+    .navitem {
+        font-size: 1.2rem;
+    }
 }

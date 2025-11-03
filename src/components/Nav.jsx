@@ -1,27 +1,48 @@
 import { NavLink } from "react-router-dom";
+import { useState } from 'react';
 import './Nav.css';
 
 function Nav() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav id="navbar">
-      <ul>
+      <button 
+        className={`hamburger ${isOpen ? 'active' : ''}`}
+        onClick={toggleMenu}
+        aria-label="Toggle menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul className={isOpen ? 'active' : ''}>
         <li>
-          <NavLink to="/" className="navitem">
+          <NavLink to="/" className="navitem" onClick={closeMenu}>
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/games" className="navitem">
+          <NavLink to="/games" className="navitem" onClick={closeMenu}>
             Games
           </NavLink>
         </li>
         <li>
-          <NavLink to="/art" className="navitem">
+          <NavLink to="/art" className="navitem" onClick={closeMenu}>
             Art
           </NavLink>
         </li>
-        <li style={{float: 'right'}}>
-          <NavLink to="/contact" className="navitem">
+        <li className="contact-item">
+          <NavLink to="/contact" className="navitem" onClick={closeMenu}>
             Contact
           </NavLink>
         </li>

@@ -1,12 +1,10 @@
 body {
   margin: 0;
   padding: 0;
-
   background: var(--background);
 }
 
-.landing
-{
+.landing {
   background: var(--backgroundSecondary);
   width: 100%;
   height: 100vh;
@@ -17,7 +15,7 @@ body {
 
   border-bottom: 10px solid;
   border-image-slice: 1;
-  border-width: .15vw;
+  border-width: .25vh;
 
   animation-name: gradientLine;
   animation-iteration-count: infinite;
@@ -26,80 +24,64 @@ body {
   overflow: hidden;
 }
 
-.landing h1
-{
+.landing h1 {
   place-self: center;
-
   color: white;
   font-size: 3vw;
   font-weight: 100;
-
   z-index: 1;
+
+  margin: 10vw;
 }
 
-.landing img
-{
+.landing img {
   place-self: center;
-
   margin: 0;
-
   width: auto;
   height: 100vh;
 }
 
-.about
-{
+.about {
   width: 100%;
-  height: 50svh;
-
+  min-height: 50svh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   margin: 0;
-  padding: 0;
-
+  padding: 2rem 1rem;
   color: white;
-
   text-align: center;
 }
 
-.about h2
-{
+.about h2 {
   font-weight: 500;
   font-size: 2.5vw;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.about p
-{
+.about p {
   font-weight: 100;
   font-size: 1.25vw;
-
   width: 60vw;
+  line-height: 1.6;
 }
 
 .recentwork {
   width: 100%;
-  height: 50svh;
-
+  min-height: 50svh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   margin: 0;
-  padding: 0;
-
+  padding: 2rem 1rem;
   color: white;
-
   text-align: center;
 }
 
-.recentwork h2
-{
+.recentwork h2 {
   font-weight: 500;
   font-size: 2.5vw;
   margin-top: 20px;
@@ -109,4 +91,99 @@ body {
 .boxlink-container {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+}
+
+/* Tablet breakpoint */
+@media (max-width: 1024px) {
+  .landing h1 {
+    font-size: 4vw;
+  }
+
+  .about h2,
+  .recentwork h2 {
+    font-size: 3.5vw;
+  }
+
+  .about p {
+    font-size: 2vw;
+    width: 80vw;
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 768px) {
+  .landing {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+    padding: 2rem 1rem;
+  }
+
+  .landing h1 {
+    font-size: 8vw;
+    margin-bottom: 1rem;
+  }
+
+  .landing img {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: cover;
+  }
+
+  .about {
+    padding: 3rem 1.5rem;
+    min-height: auto;
+  }
+
+  .about h2 {
+    font-size: 6vw;
+  }
+
+  .about p {
+    font-size: 4vw;
+    width: 90vw;
+  }
+
+  .recentwork {
+    padding: 3rem 1.5rem;
+    min-height: auto;
+  }
+
+  .recentwork h2 {
+    font-size: 6vw;
+    margin-bottom: 2rem;
+  }
+
+  .boxlink-container {
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+
+    align-items: center;
+  }
+}
+
+/* Small mobile breakpoint */
+@media (max-width: 480px) {
+  .landing {
+    padding: 1rem;
+  }
+
+  .landing h1 {
+    font-size: 10vw;
+  }
+
+  .about h2,
+  .recentwork h2 {
+    font-size: 7vw;
+  }
+
+  .about p {
+    font-size: 4.5vw;
+    width: 95vw;
+  }
 }
