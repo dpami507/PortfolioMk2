@@ -31,7 +31,7 @@ function Home() {
             <p>
                 I'm David Amidon, a Game Programming student at Champlain College.
                 I work primarily in C++, C#, and Unity, building games and figuring out how to make things work the way I want them to. I like the problem-solving side of development and working with others on creative projects.
-                My portfolio has games and art I've made, plus some community service stuff. Currently looking for internship and entry-level opportunities in game programming and software development.
+                Currently looking for internship and entry-level opportunities in game programming and software development.
             </p>
         </div>
 
