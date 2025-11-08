@@ -1,18 +1,33 @@
+import { useState } from 'react';
 import './Home.css'
 import { workList } from '../work.js';
 
 import Heading from '../components/Heading.jsx'
-import WorkComponent from '../components/WorkComponent.jsx';
+import BoxLink from '../components/BoxLink.jsx';
+import PopUp from '../components/PopUp.jsx'
 
 function Art() {
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [currentPopup, setCurrentPopup] = useState({});
+
+    const openPopup = (data) => {
+        setCurrentPopup(data);
+        setIsPopupOpen(true);
+        console.log(currentPopup);
+    };
+
+    const closePopup = () => {
+        setIsPopupOpen(false);
+    };
+
     const items = [];
 
     for (let i = 0; i < workList.length; i++) {
         if(workList[i].type !== "art") continue;
         items.push(
-            <WorkComponent 
+            <BoxLink 
             img={workList[i].img} 
-            link={workList[i].link} 
+            link={() => openPopup(workList[i])} 
             title={workList[i].title} 
             description={workList[i].description}
             />
@@ -21,6 +36,7 @@ function Art() {
 
     return (
     <>
+        <PopUp isOpen={isPopupOpen} onClose={closePopup} img={currentPopup.img} link={currentPopup.link} title={currentPopup.title} description={currentPopup.description}/>
         <Heading title={"Art"}/>
         <ol className='workcomp-container'>
             {items}

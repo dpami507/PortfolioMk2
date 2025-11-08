@@ -1,9 +1,24 @@
+import { useState } from 'react';
 import './Home.css'
 import { workList } from '../work.js';
 import { getImagePath } from '../utils/helpers'
 import BoxLink from '../components/BoxLink.jsx'
+import PopUp from '../components/PopUp.jsx'
 
 function Home() {
+
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [currentPopup, setCurrentPopup] = useState({});
+
+    const openPopup = (data) => {
+        setCurrentPopup(data);
+        setIsPopupOpen(true);
+        console.log(currentPopup);
+    };
+
+    const closePopup = () => {
+        setIsPopupOpen(false);
+    };
 
     const items = [];
 
@@ -11,7 +26,7 @@ function Home() {
         items.push(
             <BoxLink 
             img={workList[i].img} 
-            link={workList[i].link} 
+            link={() => openPopup(workList[i])} 
             title={workList[i].title} 
             description={workList[i].description}
             />
@@ -20,6 +35,14 @@ function Home() {
 
   return (
     <>  
+        <PopUp 
+            isOpen={isPopupOpen} 
+            onClose={closePopup} 
+            img={currentPopup.img} 
+            link={currentPopup.link} 
+            title={currentPopup.title} 
+            description={currentPopup.description}
+            />
     
         <div className='landing'>
             <h1>David Amidon</h1>

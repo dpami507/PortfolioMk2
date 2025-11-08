@@ -5,8 +5,8 @@
   justify-self: center;
   display: grid;
 
-  width: 80%;
-  grid-template-columns: auto auto;
+  width: auto;
+  grid-template-columns: auto auto auto auto;
 
   gap: 25px;
 }
@@ -14,6 +14,20 @@
 @media (max-width: 1024px) {
   .workcomp-container
   {
-    grid-template-columns: 100%;
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .workcomp-container
+  {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .workcomp-container
+  {
+    grid-template-columns: auto;
   }
 }

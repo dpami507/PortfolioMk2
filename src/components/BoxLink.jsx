@@ -1,17 +1,15 @@
-import { Link } from 'react-router-dom'
 import { getImagePath } from '../utils/helpers'
 import './BoxLink.css'
 
 function BoxLink({img, link, title, description}) {
   return (
     <>
-        <Link to={link} className='container'>
+        <button onClick={link} className='container'>
           <div>
             <h3>{title}</h3>
-            <p>{description}</p>
           </div>
           <img src={getImagePath(img)} alt="" />
-        </Link>
+        </button>
     </>
   )
 }
