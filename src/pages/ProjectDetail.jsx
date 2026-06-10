@@ -6,7 +6,7 @@ import './ProjectDetail.css'
 
 function ProjectDetail() {
     const { projectId } = useParams();
-    const { workList, loading, error } = useWorkList();
+    const { workList, assets, skills, loading, error } = useWorkList();
     const navigate = useNavigate();
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);

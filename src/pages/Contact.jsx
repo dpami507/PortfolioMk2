@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { useWorkList } from '../work.js';
 
 function Contact() {
-    const { workList, assets, loading, error } = useWorkList();
+    const { workList, assets, skills, loading, error } = useWorkList();
 
     return (
     <>

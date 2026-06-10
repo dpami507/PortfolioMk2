@@ -5,7 +5,7 @@ import Heading from '../components/Heading.jsx'
 import BoxLink from '../components/BoxLink.jsx';
 
 function Art() {
-    const { workList, loading, error } = useWorkList();
+    const { workList, assets, skills, loading, error } = useWorkList();
 
     const items = [];
 

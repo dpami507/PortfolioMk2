@@ -13,46 +13,60 @@ function fetchTable(tableName) {
   }).then(res => res.json());
 }
 
-export function useWorkList() {
-  const [workList, setWorkList] = useState([]);
-  const [assets, setAssets] = useState({});
-  const [skills, setSkills] = useState({});
+let cachedData = null;
+let fetchPromise = null;
 
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+function loadAllData() {
+    if (cachedData) return Promise.resolve(cachedData);
+    if (fetchPromise) return fetchPromise;
 
-  useEffect(() => {
-    Promise.all([fetchTable(PROJECTS_TABLE), fetchTable(ASSETS_TABLE), fetchTable(SKILLS_TABLE)])
-      .then(([projectsData, assetsData, skillsData]) => {
-        const records = projectsData.records.map(record => ({
-          ...record.fields,
-        }));
+    fetchPromise = Promise.all([
+        fetchTable(PROJECTS_TABLE),
+        fetchTable(ASSETS_TABLE),
+        fetchTable(SKILLS_TABLE)
+    ]).then(([projectsData, assetsData, skillsData]) => {
+        const workList = projectsData.records.map(record => ({ ...record.fields }));
 
-        const assetMap = {};
+        const assets = {};
         assetsData.records.forEach(record => {
-          const name = record.fields.id;
-          assetMap[name] = record.fields.img?.[0]?.url ?? null;
+            assets[record.fields.id] = record.fields.img?.[0]?.url ?? null;
         });
 
-        const skillRecords = {};
+        const skills = {};
         skillsData.records.forEach(record => {
-          const skill = record.fields.skill;
-          skillRecords[skill] = record.fields.img?.[0]?.url ?? null;
+            skills[record.fields.skill] = record.fields.img?.[0]?.url ?? null;
         });
 
-        setWorkList(records);
-        setAssets(assetMap);
-        setSkills(skillRecords);
+        cachedData = { workList, assets, skills };
+        return cachedData;
+    });
 
-        setLoading(false);
+    return fetchPromise;
+}
 
-      })
-      .catch(err => {
-        console.error('Error loading Airtable:', err);
-        setError(err);
-        setLoading(false);
-      });
-  }, []);
 
-  return { workList, assets, skills, loading, error };
+export function useWorkList() {
+    const [data, setData] = useState(cachedData); // instant if already loaded
+    const [loading, setLoading] = useState(!cachedData);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        if (cachedData) return; // already have it, nothing to do
+
+        loadAllData()
+            .then(setData)
+            .catch(err => {
+                console.error('Error loading Airtable:', err);
+                setError(err);
+            })
+            .finally(() => setLoading(false));
+    }, []);
+
+    return {
+        workList: data?.workList ?? [],
+        assets: data?.assets ?? {},
+        skills: data?.skills ?? {},
+        loading,
+        error
+    };
 }
