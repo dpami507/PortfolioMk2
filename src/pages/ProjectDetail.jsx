@@ -74,7 +74,7 @@ function ProjectDetail() {
                     <h2>{project.title}</h2>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;{project.description}</p>
                     <div className="tech-stack-detail">
-                        <p><b>Tech Stack:</b> {project.tech}</p>
+                        <p><b>Tech Stack:</b> {project.tech.join(", ")}</p>
                         <p><b>Role:</b> {project.role}</p>
                         <p><b>Date:</b> {project.date}</p>
                     </div>
